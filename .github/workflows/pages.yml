@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages (v2)
+
+on:
+  push:
+    branches: ["main"]
+    # Only run when v2 or the workflow changes
+    paths:
+      - "versions/v2/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # If you add a build step later (npm/yarn build), insert it here.
+
+      - name: Upload static site from versions/v2
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./versions/v2
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
