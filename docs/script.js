@@ -471,6 +471,11 @@ async function showEvent(prompt, options) {
   state.eventData.optionLines = optLines;
   // onSelect will be set by caller
   renderATM();
+  // If there are no options, do NOT attach keyboard handlers here.
+  // Caller (e.g., event13 code entry) manages its own input.
+  if (options.length === 0) {
+    return null;
+  }
   return new Promise(resolve => {
     const onKey = (e) => {
       if (state.locked || !state.eventActive) return;
