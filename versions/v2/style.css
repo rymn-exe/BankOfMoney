@@ -1,0 +1,129 @@
+:root {
+  --bg: #0f0f10;
+  --fg: #eaeaea;
+  --muted: #9aa0a6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.wrap {
+  width: min(680px, 92vw);
+}
+
+.screen {
+  border: 1px solid #2b2b2b;
+  border-radius: 12px;
+  padding: 18px 16px;
+  background: #0b0b0c;
+  line-height: 1.35;
+  font-size: 16px;
+  white-space: pre;
+  user-select: none;
+  min-height: 320px;
+}
+
+.screen span {
+  white-space: pre;
+}
+
+.opt-bracket {
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+.event-opt {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
+  font-size: inherit;
+}
+
+.screen .tt {
+  position: relative;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+.screen .tt:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: -1.6em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2b2b2b;
+  color: var(--fg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.hint {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.action {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+
+.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.danger {
+  color: #e53935;
+}
+
+.warn {
+  color: #ff9800;
+}
+
+.blink {
+  animation: blink 0.9s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.35; }
+}
+
+.tip {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+
+.screen abbr {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+
+.mustard {
+  color: #d4b106;
+}
+.screen.center {
+  text-align: center;
+}
+*** End Patch```} />
+assistant to=functions.apply_patch матурочную to=functions.apply_patchీఆర్ JSON inputs are unsupported. Please ensure the content is a properly formatted string.  We'll resend correctly. We'll call apply_patch again with correct FREEFORM string. Let's build the patch again. We'll include the same file content. 
+
